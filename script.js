@@ -1169,15 +1169,6 @@ function initCVDownload() {
                         <li style="margin-bottom: 2px;"><span style="color: #333;"><strong>Backend Developer Internship Certificate</strong> &ndash; Asitech Global Solution</span></li>
                     </ul>
                 </div>
-
-                <!-- ACCOMPLISHMENTS -->
-                <div class="cv-section" style="page-break-inside: avoid; margin-top: 16px;">
-                    <h2 style="font-size: 11pt; text-transform: uppercase; color: #1e3a8a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px; margin: 0 0 8px 0; font-weight: bold; letter-spacing: 0.5px;">Accomplishments</h2>
-                    <ul style="margin: 0; padding-left: 18px; font-size: 9pt; color: #3b82f6; line-height: 1.35;">
-                        <li style="margin-bottom: 2px;"><span style="color: #333;"><strong>Speaker: Fundamental AI</strong> &ndash; Pemateri Fundamental AI</span></li>
-                        <li style="margin-bottom: 2px;"><span style="color: #333;"><strong>Rank 4 Science Competition</strong> &ndash; High School Level</span></li>
-                    </ul>
-                </div>
             </div>
         `;
         
