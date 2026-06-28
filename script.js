@@ -1071,7 +1071,8 @@ function initCVDownload() {
                     </div>
                     <div style="font-size: 9pt; color: #222;">
                         <a href="https://linkedin.com/in/muhammad-yasser-297464272" style="color: #000; text-decoration: none; font-weight: 500;">linkedin.com/in/muhammad-yasser-297464272</a> &bull; 
-                        <a href="https://github.com/Yaxr" style="color: #000; text-decoration: none; font-weight: 500;">github.com/Yaxr</a>
+                        <a href="https://github.com/Yaxr" style="color: #000; text-decoration: none; font-weight: 500;">github.com/Yaxr</a> &bull; 
+                        <a href="https://yaxr.github.io/myweb/" style="color: #000; text-decoration: none; font-weight: 500;">yaxr.github.io/myweb</a>
                     </div>
                 </div>
 
