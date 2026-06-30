@@ -1102,7 +1102,7 @@ function initCVDownload() {
                     <h2 style="font-size: 11pt; text-transform: uppercase; color: #1e3a8a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px; margin: 0 0 8px 0; font-weight: bold; letter-spacing: 0.5px;">Technical Skills</h2>
                     <ul style="margin: 0; padding-left: 18px; font-size: 9.5pt; color: #3b82f6; line-height: 1.4;">
                         <li><span style="color: #222;"><strong>Programming:</strong> Python, JavaScript, TypeScript, HTML/CSS, SQL</span></li>
-                        <li><span style="color: #222;"><strong>Frameworks & Libs:</strong> NestJS, TensorFlow, PyTorch, Pandas, NLP, OpenCV</span></li>
+                        <li><span style="color: #222;"><strong>Frameworks & Libs:</strong> NestJS, TensorFlow, PyTorch, Pandas, NLP</span></li>
                         <li><span style="color: #222;"><strong>Tools & Databases:</strong> Power BI, Excel, Google Sheets, Apps Script, AI Groq API, PostgreSQL, Git, GitHub, IoT</span></li>
                         <li><span style="color: #222;"><strong>Languages:</strong> English, Indonesian</span></li>
                     </ul>
