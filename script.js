@@ -28,7 +28,7 @@ const projectData = {
                 description: 'Enhanced YOLO11n architecture by replacing standard attention modules with GConvMod, inspired by the Conv2Former design pattern. This modification achieved improved face detection performance while significantly reducing computational cost — making it suitable for edge deployment.',
                 details: [
                     'Modified YOLO11n architecture with GConvMod attention modules',
-                    'Improved detection accuracy with reduced FLOPs and parameters',
+                    'Improved detection accuracy by 1% mAP50 while reducing GFLOPs by 1% and parameters',
                     'Benchmarked against baseline models for performance evaluation',
                     'Focused on real-time face detection applications'
                 ],
@@ -66,7 +66,7 @@ const projectData = {
                     'Built interactive dashboards for sales performance monitoring',
                     'Generated data-driven recommendations for sales improvement'
                 ],
-                tech: ['Python', 'Power BI', 'Pandas', 'Data Analytics', 'SQL'],
+                tech: ['Power BI', 'Excel'],
                 relevance: 90,
                 evidence: [
                     { type: 'image', src: 'assets/Hasil%20Project/Sales%20Performance%20Analytics%20Dashboard/US%20Candy%20Sales%20Performance.png', label: 'US Candy Sales Performance' },
@@ -83,7 +83,7 @@ const projectData = {
                     'Built Bidirectional LSTM (BiLSTM) model with TensorFlow',
                     'Performed text preprocessing, tokenization, and sequence padding',
                     'Categorized feedback: App Bugs & UI, Customer Service, Gold Investment, Fees, Features',
-                    'Generated dashboard-ready datasets and actionable insights'
+                    'Found that admin fees need attention as 82% of feedback regarding costs and administration processes was negative'
                 ],
                 tech: ['Python', 'TensorFlow', 'BiLSTM', 'NLP', 'Deep Learning', 'Pandas'],
                 relevance: 85,
@@ -116,14 +116,14 @@ const projectData = {
                 icon: 'layout-dashboard',
                 title: 'Interactive Dashboard System — BKN Manado',
                 date: 'Dec 2025 - Jun 2026',
-                description: 'Developed interactive dashboards and AI-generated summaries for the National Civil Service Agency (BKN) Manado office. Transformed raw administrative ASN datasets into visual, actionable insights to support data-driven decision making.',
+                description: 'Developed interactive dashboard system in Google Sheets and AI-generated summaries using Google Apps Script and the Groq API for the National Civil Service Agency (BKN) Manado office. Transformed raw administrative ASN datasets into visual, actionable insights to support data-driven decision making.',
                 details: [
-                    'Built interactive dashboards for ASN data visualization',
-                    'Integrated AI-generated summaries for quick decision support',
-                    'Managed data cleansing, validation, and maintenance pipelines',
+                    'Built interactive Google Sheets dashboards for ASN data visualization',
+                    'Integrated AI-generated summaries using Groq API and Apps Script for quick decision support',
+                    'Managed data cleansing, validation, and maintenance pipelines using Google Sheets functions and scripts',
                     'Transformed administrative data into actionable business insights'
                 ],
-                tech: ['Python', 'Power BI', 'SQL', 'Streamlit', 'AI/ML'],
+                tech: ['Apps Script', 'Google Sheets', 'AI Groq API'],
                 relevance: 100,
                 evidence: [
                     { type: 'video', src: 'assets/Hasil%20Project/Interactive%20Dashboard%20System%20%E2%80%94%20BKN%20Manado/Video%20Dashboard%20BKN.mp4', label: 'BKN Manado Interactive Dashboard Demo' }
@@ -1101,9 +1101,9 @@ function initCVDownload() {
                 <div class="cv-section" style="margin-bottom: 16px;">
                     <h2 style="font-size: 11pt; text-transform: uppercase; color: #1e3a8a; border-bottom: 2px solid #3b82f6; padding-bottom: 4px; margin: 0 0 8px 0; font-weight: bold; letter-spacing: 0.5px;">Technical Skills</h2>
                     <ul style="margin: 0; padding-left: 18px; font-size: 9.5pt; color: #3b82f6; line-height: 1.4;">
-                        <li><span style="color: #222;"><strong>Programming:</strong> Python, SQL, JavaScript, TypeScript, HTML/CSS</span></li>
-                        <li><span style="color: #222;"><strong>Frameworks & Libs:</strong> NestJS, Streamlit, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, NLP, OpenCV</span></li>
-                        <li><span style="color: #222;"><strong>Tools & Databases:</strong> Power BI, Tableau, PostgreSQL, MySQL, Excel, Git, GitHub, Jupyter Notebook, Google Colab</span></li>
+                        <li><span style="color: #222;"><strong>Programming:</strong> Python, JavaScript, TypeScript, HTML/CSS, SQL</span></li>
+                        <li><span style="color: #222;"><strong>Frameworks & Libs:</strong> NestJS, TensorFlow, PyTorch, Pandas, NLP, OpenCV</span></li>
+                        <li><span style="color: #222;"><strong>Tools & Databases:</strong> Power BI, Excel, Google Sheets, Apps Script, AI Groq API, PostgreSQL, Git, GitHub, IoT</span></li>
                         <li><span style="color: #222;"><strong>Languages:</strong> English, Indonesian</span></li>
                     </ul>
                 </div>
