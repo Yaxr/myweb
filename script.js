@@ -1144,7 +1144,7 @@ function initCVDownload() {
                             <span>Backend Developer Intern</span>
                             <span>Oct 2023 &ndash; Jan 2024</span>
                         </div>
-                        <div style="font-size: 9pt; font-style: italic; color: #444; margin-bottom: 4px;">Asitech Global Solution &mdash; Remote</div>
+                        <div style="font-size: 9pt; font-style: italic; color: #444; margin-bottom: 4px;">Asitech Global Solution &mdash; Makassar, Indonesia</div>
                         <ul style="margin: 0; padding-left: 18px; font-size: 9pt; color: #3b82f6; line-height: 1.35;">
                             <li style="margin-bottom: 2px; text-align: justify;"><span style="color: #333;">Developed scalable backend REST APIs using NestJS framework and TypeScript.</span></li>
                             <li style="margin-bottom: 2px; text-align: justify;"><span style="color: #333;">Designed relational PostgreSQL database schemas with query optimization to improve load times.</span></li>
