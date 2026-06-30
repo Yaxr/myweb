@@ -35,18 +35,18 @@ const projectData = {
                 tech: ['Python', 'YOLO', 'PyTorch', 'Computer Vision', 'Deep Learning'],
                 relevance: 100,
                 evidence: [
-                    { 
-                        type: 'comparison', 
-                        mediaType: 'video', 
+                    {
+                        type: 'comparison',
+                        mediaType: 'video',
                         label: 'Face Detection Comparison (Video)',
                         originalSrc: 'assets/Hasil%20Project/YOLO11n-GConvMod%20Lightweight%20Face%20Detection/YOLO11n%20Original.mp4',
                         modifiedSrc: 'assets/Hasil%20Project/YOLO11n-GConvMod%20Lightweight%20Face%20Detection/YOLO11n%20Modify.mp4',
                         originalLabel: 'Original YOLO11n',
                         modifiedLabel: 'Modified (GConvMod)'
                     },
-                    { 
-                        type: 'comparison', 
-                        mediaType: 'image', 
+                    {
+                        type: 'comparison',
+                        mediaType: 'image',
                         label: 'Confusion Matrix Comparison',
                         originalSrc: 'assets/Hasil%20Project/YOLO11n-GConvMod%20Lightweight%20Face%20Detection/Confusion%20Matrix%20Original.png',
                         modifiedSrc: 'assets/Hasil%20Project/YOLO11n-GConvMod%20Lightweight%20Face%20Detection/Confusion%20Matrix%20Modify.png',
@@ -454,7 +454,7 @@ function initProjectCategories() {
 
             // Set panel title
             panelTitle.textContent = data.title;
-            
+
             // Store current category data for sorting
             let currentProjects = [...data.projects];
             let isSorted = false;
@@ -462,7 +462,7 @@ function initProjectCategories() {
 
             const btnSortRelevance = document.getElementById('btnSortRelevance');
             const btnEditMode = document.getElementById('btnEditMode');
-            
+
             function renderProjectList() {
                 // Build project list HTML
                 projectList.innerHTML = currentProjects.map((project, idx) => `
@@ -529,40 +529,40 @@ function initProjectCategories() {
                         }
                     });
                 });
-                
+
                 // Attach drag and drop listeners
                 if (isEditMode) {
                     let dragSource = null;
                     projectList.querySelectorAll('.project-item').forEach(item => {
-                        item.addEventListener('dragstart', function(e) {
+                        item.addEventListener('dragstart', function (e) {
                             dragSource = this;
                             e.dataTransfer.effectAllowed = 'move';
                             e.dataTransfer.setData('text/html', this.innerHTML);
                             setTimeout(() => this.classList.add('dragging'), 0);
                         });
-                        item.addEventListener('dragover', function(e) {
+                        item.addEventListener('dragover', function (e) {
                             e.preventDefault();
                             e.dataTransfer.dropEffect = 'move';
                             return false;
                         });
-                        item.addEventListener('drop', function(e) {
+                        item.addEventListener('drop', function (e) {
                             e.stopPropagation();
                             if (dragSource !== this) {
                                 const sourceIdx = parseInt(dragSource.dataset.idx);
                                 const targetIdx = parseInt(this.dataset.idx);
-                                
+
                                 const movedItem = currentProjects.splice(sourceIdx, 1)[0];
                                 currentProjects.splice(targetIdx, 0, movedItem);
-                                
+
                                 // Update main data and local storage
                                 projectData[category].projects = [...currentProjects];
                                 localStorage.setItem('portfolio_projectData', JSON.stringify(projectData));
-                                
+
                                 renderProjectList();
                             }
                             return false;
                         });
-                        item.addEventListener('dragend', function(e) {
+                        item.addEventListener('dragend', function (e) {
                             this.classList.remove('dragging');
                         });
                     });
@@ -575,10 +575,10 @@ function initProjectCategories() {
             if (btnSortRelevance) {
                 // Reset button state when opening a new category
                 btnSortRelevance.classList.remove('active');
-                
+
                 const newBtnSort = btnSortRelevance.cloneNode(true);
                 btnSortRelevance.parentNode.replaceChild(newBtnSort, btnSortRelevance);
-                
+
                 newBtnSort.addEventListener('click', () => {
                     if (!isSorted) {
                         currentProjects.sort((a, b) => (b.relevance || 0) - (a.relevance || 0));
@@ -592,21 +592,21 @@ function initProjectCategories() {
                     renderProjectList();
                 });
             }
-            
+
             // Handle edit mode button
             if (btnEditMode) {
                 const newBtnEdit = btnEditMode.cloneNode(true);
                 btnEditMode.parentNode.replaceChild(newBtnEdit, btnEditMode);
-                
+
                 // Reset edit mode state
                 isEditMode = false;
                 newBtnEdit.classList.remove('active');
                 newBtnEdit.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
-                
+
                 newBtnEdit.addEventListener('click', () => {
                     isEditMode = !isEditMode;
                     newBtnEdit.classList.toggle('active');
-                    
+
                     const sortBtn = document.getElementById('btnSortRelevance');
                     if (isEditMode) {
                         newBtnEdit.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>`;
@@ -680,7 +680,7 @@ async function fetchArtworkStats() {
     try {
         const response = await fetch(WEB_APP_URL);
         const data = await response.json();
-        
+
         // Update likes and comments in the UI
         document.querySelectorAll('.like-btn').forEach(likeBtn => {
             const artworkName = likeBtn.dataset.artwork;
@@ -688,7 +688,7 @@ async function fetchArtworkStats() {
                 likeBtn.querySelector('.like-count').textContent = data[artworkName].likes || 0;
             }
         });
-        
+
         document.querySelectorAll('.comment-btn').forEach(commentBtn => {
             const artworkName = commentBtn.dataset.artwork;
             if (data[artworkName]) {
@@ -717,7 +717,7 @@ function initArtInteractions() {
     likeBtns.forEach(btn => {
         const artworkName = btn.dataset.artwork;
         const countSpan = btn.querySelector('.like-count');
-        
+
         // Check local storage for whether this user has liked it already (to prevent double voting)
         const hasLiked = localStorage.getItem(`liked_${artworkName}`);
         if (hasLiked) {
@@ -772,7 +772,7 @@ function initArtInteractions() {
     // Submit Comment Form
     commentForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         if (!WEB_APP_URL) {
             formStatus.textContent = "Please add the Web App URL in script.js first!";
             formStatus.className = "form-status error";
@@ -781,7 +781,7 @@ function initArtInteractions() {
 
         const submitBtn = commentForm.querySelector('.btn-submit');
         const originalBtnText = submitBtn.innerHTML;
-        
+
         // Show loading state
         submitBtn.innerHTML = '<i data-lucide="loader-2" class="btn-icon"></i> Sending...';
         lucide.createIcons();
@@ -807,7 +807,7 @@ function initArtInteractions() {
             formStatus.textContent = "Thank you! Your comment has been sent.";
             formStatus.className = "form-status success";
             commentForm.reset();
-            
+
             // Local UI update for comment count
             const artworkName = artworkIdInput.value;
             const commentBtn = document.querySelector(`.comment-btn[data-artwork="${artworkName}"]`);
@@ -824,7 +824,7 @@ function initArtInteractions() {
                 modal.classList.remove('active');
                 formStatus.textContent = "";
             }, 3000);
-            
+
         } catch (error) {
             formStatus.textContent = "Error sending comment. Please try again later.";
             formStatus.className = "form-status error";
@@ -866,7 +866,7 @@ function closeEvidenceModal() {
         video.removeAttribute('src');
         video.load();
     }
-    
+
     // Clear comparison containers to stop playing videos
     const origWrapper = document.getElementById('comparisonOriginalWrapper');
     const modWrapper = document.getElementById('comparisonModifiedWrapper');
@@ -885,7 +885,7 @@ function renderEvidence() {
     const counterEl = document.getElementById('evidenceCounter');
     const prevBtn = document.getElementById('evidencePrev');
     const nextBtn = document.getElementById('evidenceNext');
-    
+
     // Comparison elements
     const origLabel = document.getElementById('comparisonOriginalLabel');
     const modLabel = document.getElementById('comparisonModifiedLabel');
@@ -926,20 +926,20 @@ function renderEvidence() {
         videoContainer.style.display = 'none';
         imageContainer.style.display = 'none';
         comparisonContainer.style.display = 'flex';
-        
+
         origLabel.textContent = item.originalLabel || 'Original';
         modLabel.textContent = item.modifiedLabel || 'Modified';
-        
+
         if (item.mediaType === 'video') {
             origWrapper.innerHTML = `<video id="compVidOrig" controls preload="metadata" playsinline src="${item.originalSrc}"></video>`;
             modWrapper.innerHTML = `<video id="compVidMod" controls preload="metadata" playsinline src="${item.modifiedSrc}"></video>`;
-            
+
             const vidOrig = document.getElementById('compVidOrig');
             const vidMod = document.getElementById('compVidMod');
-            
+
             // Sync play, pause, and seek events
             let isSyncing = false;
-            
+
             const syncEvent = (source, target, eventType) => {
                 source.addEventListener(eventType, () => {
                     if (isSyncing) return;
@@ -950,15 +950,15 @@ function renderEvidence() {
                     setTimeout(() => isSyncing = false, 50);
                 });
             };
-            
+
             syncEvent(vidOrig, vidMod, 'play');
             syncEvent(vidOrig, vidMod, 'pause');
             syncEvent(vidOrig, vidMod, 'seeked');
-            
+
             syncEvent(vidMod, vidOrig, 'play');
             syncEvent(vidMod, vidOrig, 'pause');
             syncEvent(vidMod, vidOrig, 'seeked');
-            
+
         } else {
             origWrapper.innerHTML = `<img src="${item.originalSrc}" alt="Original">`;
             modWrapper.innerHTML = `<img src="${item.modifiedSrc}" alt="Modified">`;
@@ -1036,10 +1036,10 @@ function initCVDownload() {
             const catTitle = projectData[cat].title;
             projectData[cat].projects.forEach(proj => {
                 if (proj.includeInCV === false) return; // Exclude if untoggled
-                
+
                 const techList = proj.tech.join(', ');
                 const detailsList = proj.details.map(detail => `<li style="margin-bottom: 3px; text-align: justify; color: #3b82f6;"><span style="color: #333;">${detail}</span></li>`).join('');
-                
+
                 projectsHTML += `
                     <div class="cv-project-item" style="margin-bottom: 14px; page-break-inside: avoid;">
                         <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 10pt; color: #111;">
@@ -1171,7 +1171,7 @@ function initCVDownload() {
                 </div>
             </div>
         `;
-        
+
         setTimeout(() => {
             alert("To download your ATS-friendly CV, please select 'Save as PDF' in the print dialog.");
             window.print();
